@@ -1,63 +1,129 @@
 body {
-  background-image: url('background.jpg');
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  font-family: monospace;
-  color: white;
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	font-family: monospace;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 h1 {
-  padding-top: 12px;
-  letter-spacing: 5px;
-  margin-bottom: 14px;
+	letter-spacing: 5px;
+	margin-bottom: 14px;
 }
 
 h2 {
-  text-transform: uppercase;
-  font-size: 28px;
-  letter-spacing: 11px;
-  word-spacing: -3px;
+	text-transform: uppercase;
+	font-size: 28px;
+	letter-spacing: 8px;
+	word-spacing: -8px;
 }
 
 .biography {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #description {
-  text-align: center;
-  max-width: 500px;
-  line-height: 1.36em;
-  font-size: 17px;
+	text-align: center;
+	max-width: 515px;
+	line-height: 1.48em;
+	font-size: 16px;
 }
 
 .language {
-  font-weight: bold;
+	font-weight: 700;
+	font-size: 20px;
+	text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e,
+		0 0 40px #ff005e, 0 0 80px #ff005e;
 }
 
 #action {
-  font-size: 19px;
-}
-
-.projects {
-  display: flex;
-  color: white;
+	font-size: 19px;
+	padding-bottom: 30px;
 }
 
 .neon-text {
-  font-size: 73px;
-  color: #fff;
-  text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
-  animation: glow 1.5s infinite alternate;
-  word-spacing: -20px;
+	font-size: 73px;
+	color: #fff;
+	text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e,
+		0 0 40px #ff005e, 0 0 80px #ff005e;
+	/* animation: glow 1.75s infinite alternate; */
+	word-spacing: -25px;
 }
 @keyframes glow {
-  0% {
-      text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
-  }
-  100% {
-      text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff, 0 0 80px #00d4ff, 0 0 160px #00d4ff;
-  }
+	0% {
+		text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e,
+			0 0 40px #ff005e, 0 0 80px #ff005e;
+	}
+	100% {
+		text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff,
+			0 0 80px #00d4ff, 0 0 160px #00d4ff;
+	}
+}
+
+.projects {
+	display: flex;
+	justify-content: space-between;
+	width: 800px;
+}
+
+.card {
+	margin: 0 auto;
+	padding: 2em;
+	width: 175px;
+	background: #1c1f2b;
+	text-align: center;
+	border-radius: 10px;
+	position: relative;
+	cursor: pointer;
+}
+
+.card-title {
+	font-size: 17px;
+}
+
+@property --angle {
+	syntax: "<angle>";
+	initial-value: 0deg;
+	inherits: false;
+}
+
+.card::after,
+.card::before {
+	content: "";
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-image: conic-gradient(
+		from var(--angle),
+		#ff4545,
+		#00ff99,
+		#006aff,
+		#ff0095,
+		#ff4545
+	);
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	z-index: -1;
+	padding: 3px;
+	border-radius: 10px;
+	animation: 3s spin linear infinite;
+}
+.card::before {
+	filter: blur(1.5rem);
+	opacity: 0.5;
+}
+@keyframes spin {
+	from {
+		--angle: 0deg;
+	}
+	to {
+		--angle: 360deg;
+	}
 }
