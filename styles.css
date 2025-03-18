@@ -8,15 +8,16 @@ body {
 }
 
 h1 {
-  padding-top: 35px;
-  font-size: 50px;
+  padding-top: 12px;
   letter-spacing: 5px;
+  margin-bottom: 14px;
 }
 
 h2 {
   text-transform: uppercase;
   font-size: 28px;
   letter-spacing: 11px;
+  word-spacing: -3px;
 }
 
 .biography {
@@ -46,11 +47,11 @@ h2 {
 }
 
 .neon-text {
-  font-size: 4rem;
+  font-size: 73px;
   color: #fff;
-  margin-bottom: 14px;
   text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e, 0 0 40px #ff005e, 0 0 80px #ff005e;
   animation: glow 1.5s infinite alternate;
+  word-spacing: -20px;
 }
 @keyframes glow {
   0% {
