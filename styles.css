@@ -52,7 +52,7 @@ h2 {
 	color: #fff;
 	text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e,
 		0 0 40px #ff005e, 0 0 80px #ff005e;
-	/* animation: glow 1.75s infinite alternate; */
+	animation: glow 1.75s infinite alternate;
 	word-spacing: -25px;
 }
 @keyframes glow {
@@ -83,7 +83,11 @@ h2 {
 	cursor: pointer;
 	text-decoration: inherit;
 	color: inherit;
-	/* box-shadow: 5px 5px 5px black; */
+	box-shadow: 8px 8px 9px #090a0e;
+}
+
+.card:hover {
+	box-shadow: none;
 }
 
 .card-title {
