@@ -83,6 +83,7 @@ h2 {
 	cursor: pointer;
 	text-decoration: inherit;
 	color: inherit;
+	/* box-shadow: 5px 5px 5px black; */
 }
 
 .card-title {
@@ -95,8 +96,8 @@ h2 {
 	inherits: false;
 }
 
-.card::after,
-.card::before {
+.card:hover:after,
+.card:hover:before {
 	content: "";
 	position: absolute;
 	height: 100%;
@@ -117,6 +118,7 @@ h2 {
 	border-radius: 10px;
 	animation: 3s spin linear infinite;
 }
+
 .card::before {
 	filter: blur(1.5rem);
 	opacity: 0.5;
