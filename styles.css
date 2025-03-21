@@ -44,7 +44,7 @@ h2 {
 
 #action {
 	font-size: 19px;
-	padding-bottom: 30px;
+	padding: 0 0 30px 0;
 }
 
 .neon-text {
@@ -133,5 +133,29 @@ h2 {
 	}
 	to {
 		--angle: 360deg;
+	}
+}
+
+/* mobile styles */
+@media only screen and (max-width: 600px) {
+	h2 {
+		text-align: center;
+	}
+
+	#description {
+		padding: 0 50px;
+	}
+
+	#action {
+		text-align: center;
+		padding: 0 50px;
+	}
+
+	.projects {
+		flex-direction: column;
+	}
+
+	.card {
+		margin-bottom: 25px;
 	}
 }
