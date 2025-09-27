@@ -8,6 +8,13 @@ body {
   font-family: "Gill Sans Extrabold", sans-serif;
   color: white;
   background: black;
+  background-attachment: fixed;
+  background-blend-mode: darken;
+  background-color: #402a2acc;
+  background-image: url("./background-abstract.jpg");
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1,
@@ -28,8 +35,8 @@ a {
 .left-container {
   /* border: 1px solid white; */
   flex: 1;
-  min-width: 450px;
-  width: 450px;
+  min-width: 425px;
+  width: 425px;
   display: flex;
   justify-content: end;
   flex-direction: column;
@@ -37,8 +44,10 @@ a {
 
 .left-container > h1 {
   font-size: 50px;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
+  font-family: Garamond;
   text-transform: uppercase;
+  font-weight: 100;
 }
 
 .sections {
@@ -93,6 +102,16 @@ a {
   padding: 0;
   margin: 0;
 }
+.project-title > a {
+  border: 1.5px solid white;
+  padding: 6px;
+  border-radius: 5px;
+  box-shadow: 1.75px 1.75px 0.5px white;
+}
+
+.project-description {
+  line-height: 23px;
+}
 
 .icons {
   list-style-type: none;
@@ -115,8 +134,8 @@ a {
 .right-container {
   /* border: 1px solid white; */
   flex: 1;
-  width: 380px;
-  min-width: 380px;
+  width: 350px;
+  min-width: 350px;
   display: flex;
   justify-content: end;
   align-items: end;
@@ -127,7 +146,8 @@ a {
   margin: 0;
   padding: 0;
   text-align: right;
-  width: 70%;
+  width: 64%;
+  letter-spacing: 2px;
 }
 
 .right-container > ul > li {
@@ -146,12 +166,10 @@ a {
 
 .right-container > ul > li:hover {
   letter-spacing: 7.5px;
-  font-weight: bold;
 }
 
 .button-selected {
   letter-spacing: 7.5px;
-  font-weight: bold;
 }
 
 .last-letter {
