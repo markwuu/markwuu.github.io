@@ -19,39 +19,59 @@
         </div>
         <div id="experience" class="sections">
           <p>
-            <span class="title">Byte</span><br />Software Engineer (2021-2025)
+            <span class="title"
+              ><a target="_blank" href="https://byte.com/">Byte</a></span
+            ><br />Software Engineer (2021-2025)
           </p>
           <p>
-            <span class="title">Sunrise Integration</span><br />Fullstack Web
-            Developer (2019-2021)
+            <span class="title"
+              ><a target="_blank" href="https://sunriseintegration.com/"
+                >Sunrise Integration</a
+              ></span
+            ><br />Fullstack Web Developer (2019-2021)
           </p>
         </div>
         <div id="education" class="sections">
           <p>
-            <span class="title">DevLeague</span><br />Fullstack JS Web Engineer
-            Course
+            <span class="title"
+              ><a target="_blank" href="https://devleague.com/"
+                >DevLeague</a
+              ></span
+            ><br />Fullstack JS Web Engineer Course
           </p>
           <p>
-            <span class="title">Rutgers University</span><br />B.A. Biological
-            Sciences
+            <span class="title"
+              ><a target="_blank" href="https://www.rutgers.edu/"
+                >Rutgers University</a
+              ></span
+            ><br />B.A. Biological Sciences
           </p>
         </div>
         <div id="projects" class="sections">
-          <p>
-            <span class="title"><a target="_blank" href="https://ems-poke-quiz.netlify.app/">Pokemon Quiz App</a></span><br />An application
-            utilizing the Pokemon API to create randomized quizzes on the fly
+          <p class="project-title">
+            <a target="_blank" href="https://ems-poke-quiz.netlify.app/"
+              >Pokemon Quiz App</a
+            >
+          </p>
+          <p class="project-description">
+            An application utilizing the Pokemon API to create randomized
+            quizzes
           </p>
         </div>
         <div id="contact" class="sections">
           <p>
-            <span class="title">Email</span><br /><a
-              href="mailto:markwuu@gmail.com"
-              >markwuu@gmail.com</a
+            <span class="title"
+              ><a target="_blank" href="mailto:markwuu@gmail.com"
+                >Email</a
+              ></span
             >
           </p>
           <p>
-            <span class="title">LinkedIn</span><br />
-            <a href="https://www.linkedin.com/in/markwuu/"> Mark Wuu</a>
+            <span class="title"
+              ><a target="_blank" href="https://www.linkedin.com/in/markwuu/"
+                >LinkedIn</a
+              ></span
+            >
           </p>
         </div>
 
@@ -86,11 +106,17 @@
       </div>
       <div class="right-container">
         <ul>
-          <li id="about-button">About Me</li>
-          <li id="experience-button">Experience</li>
-          <li id="education-button">Education</li>
-          <li id="projects-button">Projects</li>
-          <li id="contact-button">Contact</li>
+          <li id="about-button">About M<span class="last-letter">e</span></li>
+          <li id="experience-button">
+            Experienc<span class="last-letter">e</span>
+          </li>
+          <li id="education-button">
+            Educatio<span class="last-letter">n</span>
+          </li>
+          <li id="projects-button">
+            Project<span class="last-letter">s</span>
+          </li>
+          <li id="contact-button">Contac<span class="last-letter">t</span></li>
         </ul>
       </div>
     </div>
@@ -109,42 +135,72 @@
 
       aboutButtton.addEventListener("click", function () {
         aboutMeContainer.style.display = "flex";
+        aboutButtton.className = "button-selected";
+
         experienceContainer.style.display = "none";
+        experienceButton.classList.remove("button-selected");
         educationContainer.style.display = "none";
+        educationButton.classList.remove("button-selected");
         projectsContainer.style.display = "none";
+        projectsButton.classList.remove("button-selected");
         contactContainer.style.display = "none";
+        contactButton.classList.remove("button-selected");
       });
 
       experienceButton.addEventListener("click", function () {
-        aboutMeContainer.style.display = "none";
         experienceContainer.style.display = "flex";
+        experienceButton.className = "button-selected";
+
+        aboutMeContainer.style.display = "none";
+        aboutButtton.classList.remove("button-selected");
         educationContainer.style.display = "none";
+        educationButton.classList.remove("button-selected");
         projectsContainer.style.display = "none";
+        projectsButton.classList.remove("button-selected");
         contactContainer.style.display = "none";
+        contactButton.classList.remove("button-selected");
       });
 
       educationButton.addEventListener("click", function () {
-        aboutMeContainer.style.display = "none";
-        experienceContainer.style.display = "none";
         educationContainer.style.display = "flex";
+        educationButton.className = "button-selected";
+
+        aboutMeContainer.style.display = "none";
+        aboutButtton.classList.remove("button-selected");
+        experienceContainer.style.display = "none";
+        experienceButton.classList.remove("button-selected");
         projectsContainer.style.display = "none";
+        projectsButton.classList.remove("button-selected");
         contactContainer.style.display = "none";
+        contactButton.classList.remove("button-selected");
       });
 
       projectsButton.addEventListener("click", function () {
-        aboutMeContainer.style.display = "none";
-        experienceContainer.style.display = "none";
-        educationContainer.style.display = "none";
         projectsContainer.style.display = "flex";
+        projectsButton.className = "button-selected";
+
+        aboutMeContainer.style.display = "none";
+        aboutButtton.classList.remove("button-selected");
+        experienceContainer.style.display = "none";
+        experienceButton.classList.remove("button-selected");
+        educationContainer.style.display = "none";
+        educationButton.classList.remove("button-selected");
         contactContainer.style.display = "none";
+        contactButton.classList.remove("button-selected");
       });
 
       contactButton.addEventListener("click", function () {
-        aboutMeContainer.style.display = "none";
-        experienceContainer.style.display = "none";
-        educationContainer.style.display = "none";
-        projectsContainer.style.display = "none";
         contactContainer.style.display = "flex";
+        contactButton.className = "button-selected";
+
+        aboutMeContainer.style.display = "none";
+        aboutButtton.classList.remove("button-selected");
+        experienceContainer.style.display = "none";
+        experienceButton.classList.remove("button-selected");
+        educationContainer.style.display = "none";
+        educationButton.classList.remove("button-selected");
+        projectsContainer.style.display = "none";
+        projectsButton.classList.remove("button-selected");
       });
     </script>
   </body>
