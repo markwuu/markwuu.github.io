@@ -1,164 +1,131 @@
 body {
-	background-image: url("background.jpg");
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size: cover;
-	font-family: monospace;
-	color: white;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  display: flex; /* Enables Flexbox for the body */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 125px;
+  font-family: "Gill Sans Extrabold", sans-serif;
+  color: white;
+  background: black;
 }
 
-h1 {
-	letter-spacing: 5px;
-	margin-bottom: 14px;
-}
-
+h1,
 h2 {
-	text-transform: uppercase;
-	font-size: 28px;
-	letter-spacing: 8px;
-	word-spacing: -8px;
-	padding-top: 20px;
+  padding: 0;
+  margin: 0;
 }
 
-.biography {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.container {
+  display: flex;
 }
 
-.description {
-	text-align: center;
-	max-width: 550px;
-	line-height: 1.48em;
-	font-size: 15px;
-	margin-top: -15px;
+.left-container {
+  /* border: 1px solid white; */
+  flex: 1;
+  min-width: 450px;
+  width: 450px;
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
 }
 
-.language {
-	font-weight: 700;
-	font-size: 20px;
-	text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e,
-		0 0 40px #ff005e, 0 0 80px #ff005e;
+.left-container > h1 {
+  font-size: 50px;
+  letter-spacing: 3px;
 }
 
-#action {
-	font-size: 19px;
-	padding: 50px 0 20px 0;
+.sections {
+  min-height: 215px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.neon-text {
-	font-size: 73px;
-	color: #fff;
-	text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e,
-		0 0 40px #ff005e, 0 0 80px #ff005e;
-	animation: glow 1.75s infinite alternate;
-	word-spacing: -25px;
-}
-@keyframes glow {
-	0% {
-		text-shadow: 0 0 5px #ff005e, 0 0 10px #ff005e, 0 0 20px #ff005e,
-			0 0 40px #ff005e, 0 0 80px #ff005e;
-	}
-	100% {
-		text-shadow: 0 0 10px #00d4ff, 0 0 20px #00d4ff, 0 0 40px #00d4ff,
-			0 0 80px #00d4ff, 0 0 160px #00d4ff;
-	}
+#about-me {
+  /* display: none; */
+  /* border: 1px solid white; */
 }
 
-.projects {
-	display: flex;
-	justify-content: space-between;
-	width: 800px;
-	padding-bottom: 30px;
+#about-me > p {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+  padding-right: 30px;
 }
 
-.card {
-	margin: 0 auto;
-	padding: 2em;
-	width: 175px;
-	background: #1c1f2b;
-	text-align: center;
-	border-radius: 10px;
-	position: relative;
-	cursor: pointer;
-	text-decoration: inherit;
-	color: inherit;
-	box-shadow: 8px 8px 9px #090a0e;
+#experience {
+  display: none;
 }
 
-.card:hover {
-	box-shadow: none;
+#education {
+  display: none;
 }
 
-.card-title {
-	font-size: 17px;
+#projects {
+  display: none;
 }
 
-@property --angle {
-	syntax: "<angle>";
-	initial-value: 0deg;
-	inherits: false;
+#projects > p {
+  padding-right: 100px;
 }
 
-.card:hover:after,
-.card:hover:before {
-	content: "";
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	background-image: conic-gradient(
-		from var(--angle),
-		#ff4545,
-		#00ff99,
-		#006aff,
-		#ff0095,
-		#ff4545
-	);
-	top: 50%;
-	left: 50%;
-	translate: -50% -50%;
-	z-index: -1;
-	padding: 3px;
-	border-radius: 10px;
-	animation: 3s spin linear infinite;
+#contact {
+  display: none;
 }
 
-.card::before {
-	filter: blur(1.5rem);
-	opacity: 0.5;
-}
-@keyframes spin {
-	from {
-		--angle: 0deg;
-	}
-	to {
-		--angle: 360deg;
-	}
+#contact > p > a {
+  color: inherit;
+  text-decoration: none;
 }
 
-/* mobile styles */
-@media only screen and (max-width: 600px) {
-	h2 {
-		text-align: center;
-	}
+.title {
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
 
-	#description {
-		padding: 0 50px;
-	}
+.icons {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
 
-	#action {
-		text-align: center;
-		padding: 0 50px;
-	}
+.icons > li {
+  padding-right: 15px;
+}
 
-	.projects {
-		flex-direction: column;
-	}
+.svg-icon path {
+  fill: white; /* Sets the interior color to blue */
+  width: 100px;
+  height: 100px;
+}
 
-	.card {
-		margin-bottom: 25px;
-	}
+.right-container {
+  /* border: 1px solid white; */
+  flex: 1;
+  width: 380px;
+  min-width: 380px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+}
+
+.right-container > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  width: 70%;
+}
+
+.right-container > ul > li {
+  border-bottom: 1.5px solid white;
+  margin-top: 20px;
+  padding-bottom: 3px;
+  font-size: 23px;
+  cursor: pointer;
 }
