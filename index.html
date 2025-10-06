@@ -13,7 +13,7 @@
       <div class="left-container">
         <h1>Mark Wuu</h1>
         <div id="about-me" class="sections">
-          <span id="hello">Hi! 👋</span>
+          <span id="hello">Hi!👋</span>
           <p>
             I'm Mark and I'm a
             <span class="highlighted">software engineer</span>. I have 6 years
@@ -29,7 +29,7 @@
             <br />
             <div class="click-me"
               ><a target="_blank" href="mailto:markwuu@gmail.com"
-                >Please send me a message!</a
+                >Please send me a message! <span class="emoji">✉️</span></a
               ></div
             >
             <br />
@@ -157,18 +157,19 @@
       <div class="right-container">
         <ul>
           <li id="about-button" class="button-selected">
-            About M<span class="last-letter">e</span>
+            <span id="about-button-emoji" class="nav-emoji-visible">➡️ </span>About M<span class="last-letter">e</span>
           </li>
           <li id="experience-button">
-            Experienc<span class="last-letter">e</span>
+            <span id="experience-button-emoji" class="nav-emoji-hidden">➡️ </span>Experienc<span class="last-letter">e</span>
           </li>
           <li id="education-button">
-            Educatio<span class="last-letter">n</span>
+            <span id="education-button-emoji" class="nav-emoji-hidden">➡️ </span>Educatio<span class="last-letter">n</span>
           </li>
           <li id="projects-button">
-            Project<span class="last-letter">s</span>
+            <span id="projects-button-emoji" class="nav-emoji-hidden">➡️ </span>Project<span class="last-letter">s</span>
           </li>
-          <li id="contact-button">Contac<span class="last-letter">t</span></li>
+          <li id="contact-button">
+            <span id="contact-button-emoji" class="nav-emoji-hidden">➡️ </span>Contac<span class="last-letter">t</span></li>
         </ul>
       </div>
     </div>
@@ -179,80 +180,85 @@
       const projectsContainer = document.getElementById("projects");
       const contactContainer = document.getElementById("contact");
 
-      const aboutButtton = document.getElementById("about-button");
+      const aboutButton = document.getElementById("about-button");
+      const aboutButtonEmoji = document.getElementById("about-button-emoji");
       const experienceButton = document.getElementById("experience-button");
+      const experienceButtonEmoji = document.getElementById("experience-button-emoji");
       const educationButton = document.getElementById("education-button");
+      const educationButtonEmoji = document.getElementById("education-button-emoji");
       const projectsButton = document.getElementById("projects-button");
+      const projectsButtonEmoji = document.getElementById("projects-button-emoji");
       const contactButton = document.getElementById("contact-button");
+      const contactButtonEmoji = document.getElementById("contact-button-emoji");
 
-      aboutButtton.addEventListener("click", function () {
-        aboutMeContainer.style.display = "flex";
-        aboutButtton.className = "button-selected";
+      function updateNav (nav) {
+        if (nav !== 'about'){
+          aboutMeContainer.style.display = "none";
+          aboutButton.classList.remove("button-selected");
+          aboutButtonEmoji.classList.add("nav-emoji-hidden");
+        }
 
-        experienceContainer.style.display = "none";
-        experienceButton.classList.remove("button-selected");
+        if (nav !== 'experience'){
+          experienceContainer.style.display = "none";
+          experienceButton.classList.remove("button-selected");
+          experienceButtonEmoji.classList.add("nav-emoji-hidden");
+        }
+
+        if (nav !== 'education'){ 
         educationContainer.style.display = "none";
         educationButton.classList.remove("button-selected");
+        educationButtonEmoji.classList.add("nav-emoji-hidden");
+        }
+
+        if (nav !== 'projects'){ 
         projectsContainer.style.display = "none";
         projectsButton.classList.remove("button-selected");
+        projectsButtonEmoji.classList.add("nav-emoji-hidden");
+        }
+
+        if (nav !== 'contact'){ 
         contactContainer.style.display = "none";
         contactButton.classList.remove("button-selected");
+        contactButtonEmoji.classList.add("nav-emoji-hidden");
+        }
+      }
+      
+      aboutButton.addEventListener("click", function () {
+        aboutMeContainer.style.display = "flex";
+        aboutButton.className = "button-selected";
+        aboutButtonEmoji.className = "nav-emoji-visible"
+        updateNav('about')
       });
 
       experienceButton.addEventListener("click", function () {
         experienceContainer.style.display = "flex";
         experienceButton.className = "button-selected";
+        experienceButtonEmoji.className = "nav-emoji-visible"
+        updateNav('experience')
 
-        aboutMeContainer.style.display = "none";
-        aboutButtton.classList.remove("button-selected");
-        educationContainer.style.display = "none";
-        educationButton.classList.remove("button-selected");
-        projectsContainer.style.display = "none";
-        projectsButton.classList.remove("button-selected");
-        contactContainer.style.display = "none";
-        contactButton.classList.remove("button-selected");
       });
 
       educationButton.addEventListener("click", function () {
         educationContainer.style.display = "flex";
         educationButton.className = "button-selected";
+        educationButtonEmoji.className = "nav-emoji-visible"
+        updateNav('education')
 
-        aboutMeContainer.style.display = "none";
-        aboutButtton.classList.remove("button-selected");
-        experienceContainer.style.display = "none";
-        experienceButton.classList.remove("button-selected");
-        projectsContainer.style.display = "none";
-        projectsButton.classList.remove("button-selected");
-        contactContainer.style.display = "none";
-        contactButton.classList.remove("button-selected");
       });
 
       projectsButton.addEventListener("click", function () {
         projectsContainer.style.display = "flex";
         projectsButton.className = "button-selected";
+        projectsButtonEmoji.className = "nav-emoji-visible"
+        updateNav('projects')
 
-        aboutMeContainer.style.display = "none";
-        aboutButtton.classList.remove("button-selected");
-        experienceContainer.style.display = "none";
-        experienceButton.classList.remove("button-selected");
-        educationContainer.style.display = "none";
-        educationButton.classList.remove("button-selected");
-        contactContainer.style.display = "none";
-        contactButton.classList.remove("button-selected");
       });
 
       contactButton.addEventListener("click", function () {
         contactContainer.style.display = "flex";
         contactButton.className = "button-selected";
-
-        aboutMeContainer.style.display = "none";
-        aboutButtton.classList.remove("button-selected");
-        experienceContainer.style.display = "none";
-        experienceButton.classList.remove("button-selected");
-        educationContainer.style.display = "none";
-        educationButton.classList.remove("button-selected");
-        projectsContainer.style.display = "none";
-        projectsButton.classList.remove("button-selected");
+        contactButtonEmoji.className = "nav-emoji-visible"
+        updateNav('contact')
       });
     </script>
   </body>
