@@ -42,22 +42,35 @@ a {
   font-weight: 700;
 }
 
+.highlighted {
+  color: #7e4848;
+}
+
+.click-me {
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  line-height: 32px;
+  text-decoration: underline;
+  font-style: italic;
+}
+
 .sections {
   min-height: 215px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  padding-top: 30px;
+}
+
+.sections > p {
+  padding-top: 0px;
+  margin-top: 0px;
 }
 
 #about-me > p {
   font-size: 20px;
   letter-spacing: 0.5px;
-  line-height: 30px;
+  line-height: 32px;
   padding-right: 30px;
-}
-
-#resume {
-  border: 1px solid white;
 }
 
 #experience {
@@ -70,11 +83,10 @@ a {
 
 #projects {
   display: none;
-  padding-top: 30px;
 }
 
-#projects > p {
-  padding-right: 100px;
+#contact {
+  display: none;
 }
 
 #gif-container {
@@ -86,10 +98,6 @@ a {
 .gif {
   height: inherit;
   width: auto;
-}
-
-#contact {
-  display: none;
 }
 
 .title {
@@ -106,8 +114,10 @@ a {
   padding: 0 0 10px 0;
 }
 
-.project-description {
+#project-description {
   line-height: 23px;
+  padding: 20px 0 0 0;
+  margin-bottom: 0px;
 }
 
 .icons {
@@ -116,6 +126,7 @@ a {
   flex-direction: row;
   padding: 0;
   margin: 0;
+  align-items: center;
 }
 
 .icons > li {
@@ -123,13 +134,12 @@ a {
 }
 
 .svg-icon path {
-  fill: #7e4848; /* Sets the interior color to blue */
+  fill: #7e4848;
   width: 100px;
   height: 100px;
 }
 
 .right-container {
-  /* border: 1px solid white; */
   flex: 1;
   display: flex;
   justify-content: end;
@@ -141,7 +151,6 @@ a {
   margin: 0;
   padding: 0;
   text-align: right;
-  /* width: 64%; */
   letter-spacing: 2px;
 }
 
