@@ -39,7 +39,7 @@ a {
 
 .left-container > h1 {
   color: #7e4848;
-  font-size: 37px;
+  font-size: 48px;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: 700;
@@ -50,11 +50,15 @@ a {
 }
 
 .click-me {
-  font-size: 20px;
-  letter-spacing: 0.5px;
+  font-size: 25px;
+  letter-spacing: 0.6px;
   line-height: 32px;
   text-decoration: underline;
   font-style: italic;
+}
+
+.emoji {
+  font-style: normal;
 }
 
 .sections {
@@ -171,13 +175,21 @@ a {
 
 .right-container > ul > li {
   margin-bottom: 22px;
-  font-size: 18px;
+  font-size: 21px;
   cursor: pointer;
   text-transform: uppercase;
   border: 1.5px solid #070709;
   padding: 6px;
   border-radius: 5px;
   text-align: center;
+}
+
+.nav-emoji-visible {
+  visibility: visible;
+}
+
+.nav-emoji-hidden {
+  visibility: hidden;
 }
 
 .button-selected {
