@@ -43,7 +43,7 @@ a {
   width: 50%;
 }
 
-.left-container > h1 {
+.left-container > div > h1 {
   color: #7e4848;
   font-size: 48px;
   letter-spacing: 1px;
@@ -220,13 +220,34 @@ a {
   max-width: 1080px;
 }
 
+#ham-nav {
+  display: none;
+}
+
 @media screen and (max-width: 590px) {
+  #header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid white; */
+  }
+
+  #hello {
+    padding-bottom: 5px;
+    font-size: 32px;
+  }
+
+  #ham-nav {
+    display: block;
+    fill: white;
+  }
+
   body {
     margin: 35px 35px 0 35px;
   }
 
-  .left-container > h1 {
-    text-align: center;
+  .left-container > div > h1 {
+    font-size: 35px;
   }
 
   .click-me {
@@ -236,6 +257,11 @@ a {
   #about-me > p {
     padding: 0;
     letter-spacing: 0.4px;
+    line-height: 29px;
+  }
+
+  .sections {
+    padding-top: 40px;
   }
 
   .right-container {
@@ -244,11 +270,14 @@ a {
   }
 
   #footer {
-    padding: 0 0 20px 0;
     bottom: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
+  }
+
+  .icons > li {
+    padding: 0 11px;
   }
 }
