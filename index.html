@@ -150,22 +150,6 @@
     </div>
   </div>
   <script>
-    //mobile nav logic
-    const hamNavButton = document.getElementById("ham-nav");
-    const navContainer = document.getElementById("nav-container")
-    const closeNavButton = document.getElementById("close-nav");
-    hamNavButton.addEventListener("click", function () {
-      navContainer.style.display = "flex"
-      closeNavButton.style.display = "block"
-    });
-
-    closeNavButton.addEventListener("click", function () {
-      navContainer.style.display = "none"
-      closeNavButton.style.display = "none"
-      console.log('test')
-    });
-
-    //desktop nav logic
     const aboutMeContainer = document.getElementById("about-me");
     const experienceContainer = document.getElementById("experience");
     const educationContainer = document.getElementById("education");
@@ -183,9 +167,24 @@
     const contactButton = document.getElementById("contact-button");
     const contactButtonEmoji = document.getElementById("contact-button-emoji");
 
-    function hideNavContainer() {
-      navContainer.style.display = "none" //needed for mobile but not desktop
+    //mobile nav logic
+    const hamNavButton = document.getElementById("ham-nav");
+    const navContainer = document.getElementById("nav-container")
+    const closeNavButton = document.getElementById("close-nav");
+    hamNavButton.addEventListener("click", function () {
+      navContainer.style.display = "flex"
+      closeNavButton.style.display = "block"
+    });
+
+    closeNavButton.addEventListener("click", function () {
+      navContainer.style.display = "none"
       closeNavButton.style.display = "none"
+      console.log('test')
+    });
+
+    function updateMobileNav() {
+      closeNavButton.style.display = "none" //needed for mobile but not desktop
+      navContainer.style.display = "none" //needed for mobile but not desktop
     }
 
     function updateNav(nav) {
@@ -219,6 +218,46 @@
         contactButtonEmoji.classList.add("nav-emoji-hidden");
       }
     }
+
+    aboutButton.addEventListener("touchstart", function () {
+      aboutMeContainer.style.display = "flex";
+      aboutButton.className = "button-selected";
+      aboutButtonEmoji.className = "nav-emoji-visible"
+      updateNav('about');
+      updateMobileNav();
+    });
+
+    experienceButton.addEventListener("touchstart", function () {
+      experienceContainer.style.display = "flex";
+      experienceButton.className = "button-selected";
+      experienceButtonEmoji.className = "nav-emoji-visible"
+      updateNav('experience');
+      updateMobileNav();
+    });
+
+    educationButton.addEventListener("touchstart", function () {
+      educationContainer.style.display = "flex";
+      educationButton.className = "button-selected";
+      educationButtonEmoji.className = "nav-emoji-visible"
+      updateNav('education');
+      updateMobileNav();
+    });
+
+    projectsButton.addEventListener("touchstart", function () {
+      projectsContainer.style.display = "flex";
+      projectsButton.className = "button-selected";
+      projectsButtonEmoji.className = "nav-emoji-visible"
+      updateNav('projects');
+      updateMobileNav();
+    });
+
+    contactButton.addEventListener("touchstart", function () {
+      contactContainer.style.display = "flex";
+      contactButton.className = "button-selected";
+      contactButtonEmoji.className = "nav-emoji-visible"
+      updateNav('contact');
+      updateMobileNav();
+    });
 
     aboutButton.addEventListener("click", function () {
       aboutMeContainer.style.display = "flex";
@@ -255,25 +294,7 @@
       updateNav('contact')
     });
 
-    aboutButton.addEventListener("touchstart", function () {
-      hideNavContainer();
-    });
 
-    experienceButton.addEventListener("touchstart", function () {
-      hideNavContainer();
-    });
-
-    educationButton.addEventListener("touchstart", function () {
-      hideNavContainer();
-    });
-
-    projectsButton.addEventListener("touchstart", function () {
-      hideNavContainer();
-    });
-
-    contactButton.addEventListener("touchstart", function () {
-      hideNavContainer();
-    });
   </script>
 </body>
 
