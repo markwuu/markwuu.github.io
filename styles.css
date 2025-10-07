@@ -294,13 +294,17 @@ a {
   }
 
   #try-app-description {
+    display: block;
     text-align: center;
     padding: 30px 0 0 0;
+    text-transform: uppercase;
   }
 
   #view-code-description {
+    display: block;
     text-align: center;
-    padding: 30px 0 0 0;
+    padding: 10px 0 0 0;
+    text-transform: uppercase;
   }
 
   .sections > p {
