@@ -12,7 +12,7 @@
 
 <body>
   <div class="container">
-    <div class="left-container">
+    <div id="content-container">
       <div id="header">
         <h1><a href="./">Mark Wuu</a></h1>
         <svg id="ham-nav" viewBox="0 0 100 59" width="40" height="40">
@@ -118,7 +118,7 @@
         </ul>
       </div>
     </div>
-    <div class="right-container">
+    <div id="nav-container">
       <ul>
         <li id="about-button" class="button-selected">
           <span id="about-button-emoji" class="nav-emoji-visible">➡️ </span>About M<span class="last-letter">e</span>
@@ -141,6 +141,7 @@
     </div>
   </div>
   <script>
+    //desktop nav logic
     const aboutMeContainer = document.getElementById("about-me");
     const experienceContainer = document.getElementById("experience");
     const educationContainer = document.getElementById("education");
@@ -163,30 +164,35 @@
         aboutMeContainer.style.display = "none";
         aboutButton.classList.remove("button-selected");
         aboutButtonEmoji.classList.add("nav-emoji-hidden");
+        navContainer.style.display = "none"
       }
 
       if (nav !== 'experience') {
         experienceContainer.style.display = "none";
         experienceButton.classList.remove("button-selected");
         experienceButtonEmoji.classList.add("nav-emoji-hidden");
+        navContainer.style.display = "none"
       }
 
       if (nav !== 'education') {
         educationContainer.style.display = "none";
         educationButton.classList.remove("button-selected");
         educationButtonEmoji.classList.add("nav-emoji-hidden");
+        navContainer.style.display = "none"
       }
 
       if (nav !== 'projects') {
         projectsContainer.style.display = "none";
         projectsButton.classList.remove("button-selected");
         projectsButtonEmoji.classList.add("nav-emoji-hidden");
+        navContainer.style.display = "none"
       }
 
       if (nav !== 'contact') {
         contactContainer.style.display = "none";
         contactButton.classList.remove("button-selected");
         contactButtonEmoji.classList.add("nav-emoji-hidden");
+        navContainer.style.display = "none"
       }
     }
 
@@ -202,7 +208,6 @@
       experienceButton.className = "button-selected";
       experienceButtonEmoji.className = "nav-emoji-visible"
       updateNav('experience')
-
     });
 
     educationButton.addEventListener("click", function () {
@@ -210,7 +215,6 @@
       educationButton.className = "button-selected";
       educationButtonEmoji.className = "nav-emoji-visible"
       updateNav('education')
-
     });
 
     projectsButton.addEventListener("click", function () {
@@ -218,7 +222,6 @@
       projectsButton.className = "button-selected";
       projectsButtonEmoji.className = "nav-emoji-visible"
       updateNav('projects')
-
     });
 
     contactButton.addEventListener("click", function () {
@@ -226,6 +229,13 @@
       contactButton.className = "button-selected";
       contactButtonEmoji.className = "nav-emoji-visible"
       updateNav('contact')
+    });
+
+    //mobile nav logic
+    const hamNavButton = document.getElementById("ham-nav");
+    const navContainer = document.getElementById("nav-container")
+    hamNavButton.addEventListener("click", function () {
+      navContainer.style.display = "flex"
     });
   </script>
 </body>
