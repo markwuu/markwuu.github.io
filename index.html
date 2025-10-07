@@ -118,6 +118,13 @@
         </ul>
       </div>
     </div>
+    <svg id="close-nav" width="40" height="40" viewBox="-5 0 55 37">
+      <g class="close-button">
+        <rect x="0" y="0" width="40" height="40" rx="5" ry="5" fill="#ffffff" />
+        <line x1="12" y1="12" x2="28" y2="28" stroke="#7e4848" stroke-width="3" stroke-linecap="round" />
+        <line x1="28" y1="12" x2="12" y2="28" stroke="#7e4848" stroke-width="3" stroke-linecap="round" />
+      </g>
+    </svg>
     <div id="nav-container">
       <ul>
         <li id="about-button" class="button-selected">
@@ -141,6 +148,21 @@
     </div>
   </div>
   <script>
+    //mobile nav logic
+    const hamNavButton = document.getElementById("ham-nav");
+    const navContainer = document.getElementById("nav-container")
+    const closeNavButton = document.getElementById("close-nav");
+    hamNavButton.addEventListener("click", function () {
+      navContainer.style.display = "flex"
+      closeNavButton.style.display = "block"
+    });
+
+    closeNavButton.addEventListener("click", function () {
+      navContainer.style.display = "none"
+      closeNavButton.style.display = "none"
+      console.log('test')
+    });
+
     //desktop nav logic
     const aboutMeContainer = document.getElementById("about-me");
     const experienceContainer = document.getElementById("experience");
@@ -160,6 +182,8 @@
     const contactButtonEmoji = document.getElementById("contact-button-emoji");
 
     function updateNav(nav) {
+      closeNavButton.style.display = "none"
+
       if (nav !== 'about') {
         aboutMeContainer.style.display = "none";
         aboutButton.classList.remove("button-selected");
@@ -229,13 +253,6 @@
       contactButton.className = "button-selected";
       contactButtonEmoji.className = "nav-emoji-visible"
       updateNav('contact')
-    });
-
-    //mobile nav logic
-    const hamNavButton = document.getElementById("ham-nav");
-    const navContainer = document.getElementById("nav-container")
-    hamNavButton.addEventListener("click", function () {
-      navContainer.style.display = "flex"
     });
   </script>
 </body>
