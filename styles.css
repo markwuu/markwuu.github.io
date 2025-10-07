@@ -355,10 +355,18 @@ a {
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 375px) {
   #gif-container {
     height: 280px;
     display: flex;
     gap: 20px;
+  }
+
+  #try-app-description {
+    display: none;
+  }
+
+  #view-code-description {
+    display: none;
   }
 }
