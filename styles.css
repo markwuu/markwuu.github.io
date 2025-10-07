@@ -112,7 +112,7 @@ a {
 }
 
 #gif-container {
-  height: 300px;
+  height: 325px;
   display: flex;
   gap: 20px;
 }
@@ -281,8 +281,30 @@ a {
     padding-top: 60px;
   }
 
+  #project-description {
+    padding-top: 30px;
+  }
+
+  #try-app-description {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 30px 0 0 0;
+  }
+
+  #view-code-description {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 30px 0 0 0;
+  }
+
   .sections > p {
-    padding-bottom: 30px;
+    padding-bottom: 20px;
+  }
+
+  .project-title {
+    text-align: center;
   }
 
   #nav-container {
@@ -322,5 +344,13 @@ a {
 
   .icons > li {
     padding: 0 11px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  #gif-container {
+    height: 280px;
+    display: flex;
+    gap: 20px;
   }
 }
