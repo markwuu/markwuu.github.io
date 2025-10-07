@@ -63,7 +63,7 @@
         </p>
       </div>
       <div id="projects" class="sections">
-        <p class="project-title">
+        <p id="project-title">
           <a target="_blank" href="https://ems-poke-quiz.netlify.app/">Pokemon Quiz App</a>
         </p>
         <div id="gif-container">
@@ -183,42 +183,40 @@
     const contactButton = document.getElementById("contact-button");
     const contactButtonEmoji = document.getElementById("contact-button-emoji");
 
-    function updateNav(nav) {
+    function hideNavContainer() {
+      navContainer.style.display = "none" //needed for mobile but not desktop
       closeNavButton.style.display = "none"
+    }
 
+    function updateNav(nav) {
       if (nav !== 'about') {
         aboutMeContainer.style.display = "none";
         aboutButton.classList.remove("button-selected");
         aboutButtonEmoji.classList.add("nav-emoji-hidden");
-        navContainer.style.display = "none"
       }
 
       if (nav !== 'experience') {
         experienceContainer.style.display = "none";
         experienceButton.classList.remove("button-selected");
         experienceButtonEmoji.classList.add("nav-emoji-hidden");
-        navContainer.style.display = "none"
       }
 
       if (nav !== 'education') {
         educationContainer.style.display = "none";
         educationButton.classList.remove("button-selected");
         educationButtonEmoji.classList.add("nav-emoji-hidden");
-        navContainer.style.display = "none"
       }
 
       if (nav !== 'projects') {
         projectsContainer.style.display = "none";
         projectsButton.classList.remove("button-selected");
         projectsButtonEmoji.classList.add("nav-emoji-hidden");
-        navContainer.style.display = "none"
       }
 
       if (nav !== 'contact') {
         contactContainer.style.display = "none";
         contactButton.classList.remove("button-selected");
         contactButtonEmoji.classList.add("nav-emoji-hidden");
-        navContainer.style.display = "none"
       }
     }
 
@@ -255,6 +253,26 @@
       contactButton.className = "button-selected";
       contactButtonEmoji.className = "nav-emoji-visible"
       updateNav('contact')
+    });
+
+    aboutButton.addEventListener("touchstart", function () {
+      hideNavContainer();
+    });
+
+    experienceButton.addEventListener("touchstart", function () {
+      hideNavContainer();
+    });
+
+    educationButton.addEventListener("touchstart", function () {
+      hideNavContainer();
+    });
+
+    projectsButton.addEventListener("touchstart", function () {
+      hideNavContainer();
+    });
+
+    contactButton.addEventListener("touchstart", function () {
+      hideNavContainer();
     });
   </script>
 </body>
