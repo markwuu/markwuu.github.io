@@ -44,7 +44,7 @@ a {
 }
 
 #content-container > div > h1 {
-  color: #7e4848;
+  color: #893030;
   font-size: 48px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -52,7 +52,7 @@ a {
 }
 
 .highlighted {
-  color: #7e4848;
+  color: #893030;
 }
 
 .click-me {
@@ -164,7 +164,7 @@ a {
 }
 
 .svg-icon path {
-  fill: #7e4848;
+  fill: #893030;
   width: 100px;
   height: 100px;
 }
@@ -210,7 +210,7 @@ a {
   border: 1.5px solid white;
   padding: 6px;
   border-radius: 5px;
-  color: #7e4848;
+  color: #893030;
 }
 
 .last-letter {
