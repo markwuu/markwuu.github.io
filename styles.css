@@ -261,7 +261,23 @@ a {
   }
 
   .sections {
-    padding-top: 40px;
+    padding-top: 50px;
+  }
+
+  #gif-container {
+    justify-content: space-between;
+  }
+
+  #poke-gif-2 {
+    display: none;
+  }
+
+  #contact {
+    padding-top: 60px;
+  }
+
+  .sections > p {
+    padding-bottom: 30px;
   }
 
   .right-container {
